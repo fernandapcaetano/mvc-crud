@@ -13,7 +13,7 @@ class Posts extends Controller {
         $postname = $postname[1] ?? null;
 
         if ($postname) {
-            $post = $this->findBy($postname, "id"); // Use $this instead of self since findBy is not a static method
+            $post = $this->findBy($postname, "name"); // Use $this instead of self since findBy is not a static method
             if ($post) {
                 echo "<h1>{$post['name']}</h1>";
                 echo "<p>{$post['content']}</p>";
