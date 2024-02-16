@@ -1,0 +1,10 @@
+RewriteEngine On
+
+#accept loading of actual files and directories
+#Tudo o que o usuuario digitar é um arquivo ou diretorio válido
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#send everything else to the index page
+#se nao for valido mande para o index
+RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
